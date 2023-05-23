@@ -744,9 +744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef6ea6fb322602942989fcfda3eb416d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endgame: 0
-  Puan: 0
-  Coin: 0
 --- !u!114 &176533913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,9 +756,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8cbdcbeceb753140acbb9b0cbdecc67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endgame: 0
-  Puan: 0
-  Coin: 0
 --- !u!1 &193489618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1399,7 +1393,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 176533912}
         m_TargetAssemblyTypeName: AdScript, Assembly-CSharp
-        m_MethodName: ShowRewardedVideo
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1697,7 +1691,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 176533913}
         m_TargetAssemblyTypeName: RestartAdScript, Assembly-CSharp
-        m_MethodName: ShowRewardedVideo
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

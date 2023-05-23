@@ -3,88 +3,89 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using GoogleMobileAds;
 using GoogleMobileAds.Api;
 using UnityEngine.SceneManagement;
 
 public class RestartAdScript : MonoBehaviour
 {
-    public static RestartAdScript Instance;
-    private InterstitialAd interstitial_Ad;
-    private RewardedAd rewardedAd;
-    public bool endgame = false;
+    //public static RestartAdScript ýnstance;
+    //private InterstitialAd interstitial_ad;
+    //private RewardedAd rewardedad;
+    //public bool endgame = false;
 
-    public int Puan = 0;
-    public int Coin = 0;
+    //public int puan = 0;
+    //public int coin = 0;
 
-    private string interstitial_Ad_ID;
-    private string rewardedAd_ID;
+    //private string interstitial_ad_ýd;
+    //private string rewardedad_ýd;
 
-    void Start()
-    {
-        interstitial_Ad_ID = "ca-app-pub-3940256099942544/1033173712";
-        rewardedAd_ID = "ca-app-pub-3940256099942544/5224354917";
+    //void start()
+    //{
+    //    interstitial_ad_ýd = "ca-app-pub-3940256099942544/1033173712";
+    //    rewardedad_ýd = "ca-app-pub-3940256099942544/5224354917";
 
-        MobileAds.Initialize(initStatus => { });
+    //    MobileAds.Initialize(initstatus => { });
 
-        RequestInterstitial();
-        RequestRewardedVideo();
-    }
+    //    requestýnterstitial();
+    //    requestrewardedvideo();
+    //}
 
-    private void RequestInterstitial()
-    {
-        interstitial_Ad = new InterstitialAd(interstitial_Ad_ID);
-        interstitial_Ad.OnAdLoaded += HandleOnAnLoaded;
-        AdRequest request = new AdRequest.Builder().Build();
-        interstitial_Ad.LoadAd(request);
-    }
+    //private void requestýnterstitial()
+    //{
+    //    interstitial_ad = new InterstitialAd(interstitial_ad_ýd);
+    //    interstitial_ad.OnAdLoaded += handleonanloaded;
+    //    adrequest request = new adrequest.builder().build();
+    //    interstitial_ad.loadad(request);
+    //}
 
-    private void RequestRewardedVideo()
-    {
-        rewardedAd = new RewardedAd(rewardedAd_ID);
-        rewardedAd.OnUserEarnedReward += HandleUserEarnedReward;
-        rewardedAd.OnAdClosed += HandleRewardedAdClosed;
-        rewardedAd.OnAdFailedToShow += HandleRewardedAdFailedToShow;
-        AdRequest request = new AdRequest.Builder().Build();
-        rewardedAd.LoadAd(request);
-    }
+    //private void requestrewardedvideo()
+    //{
+    //    rewardedad = new rewardedad(rewardedad_ýd);
+    //    rewardedad.onuserearnedreward += handleuserearnedreward;
+    //    rewardedad.onadclosed += handlerewardedadclosed;
+    //    rewardedad.onadfailedtoshow += handlerewardedadfailedtoshow;
+    //    adrequest request = new adrequest.builder().build();
+    //    rewardedad.loadad(request);
+    //}
 
-    public void ShowInterstitial()
-    {
-        if (interstitial_Ad.IsLoaded())
-        {
-            interstitial_Ad.Show();
-            RequestInterstitial();
+    //public void showýnterstitial()
+    //{
+    //    if (interstitial_ad.ýsloaded())
+    //    {
+    //        interstitial_ad.show();
+    //        requestýnterstitial();
 
-        }
-    }
+    //    }
+    //}
 
-    public void ShowRewardedVideo()
-    {
-        if (rewardedAd.IsLoaded())
-        {
-            rewardedAd.Show();
+    //public void showrewardedvideo()
+    //{
+    //    if (rewardedad.ýsloaded())
+    //    {
+    //        rewardedad.show();
 
-        }
-    }
+    //    }
+    //}
 
-    public void HandleOnAnLoaded(object sender, EventArgs args)
-    {
+    //public void handleonanloaded(object sender, eventargs args)
+    //{
 
-    }
-    public void HandleRewardedAdFailedToShow(object sender, EventArgs args)
-    {
-        RequestRewardedVideo();
-    }
+    //}
+    //public void handlerewardedadfailedtoshow(object sender, eventargs args)
+    //{
+    //    requestrewardedvideo();
+    //}
 
-    public void HandleRewardedAdClosed(object sender, EventArgs args)
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    //public void handlerewardedadclosed(object sender, eventargs args)
+    //{
+    //    scenemanager.loadscene(scenemanager.getactivescene().buildýndex);
+    //}
 
-    public void HandleUserEarnedReward(object sender, EventArgs args)
-    {
-        RequestRewardedVideo();
-    }
+    //public void handleuserearnedreward(object sender, eventargs args)
+    //{
+    //    requestrewardedvideo();
+    //}
 
 
 

@@ -10,7 +10,7 @@ public class PotaRotator : MonoBehaviour
     public float rotationSpeedAndroid = 5f;
     public GameManager game_manager;
     public GameObject next_level;
-    public ParticleSystem particleSystem;
+    public new ParticleSystem particleSystem;
     public int Puan=0;
     
 

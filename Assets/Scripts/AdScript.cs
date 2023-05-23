@@ -8,96 +8,96 @@ using UnityEngine.SceneManagement;
 
 public class AdScript : MonoBehaviour
 {
-    public static AdScript Instance;
-    private InterstitialAd interstitial_Ad;
-    private RewardedAd rewardedAd;
-    public bool endgame = false;
+    //public static adscript ýnstance;
+    //private ýnterstitialad interstitial_ad;
+    //private rewardedad rewardedad;
+    //public bool endgame = false;
 
-    public int Puan = 0;
-    public int Coin = 0;
+    //public int puan = 0;
+    //public int coin = 0;
 
-    private string interstitial_Ad_ID;
-    private string rewardedAd_ID;
-   
-    void Start()
-    {
-        interstitial_Ad_ID = "ca-app-pub-3940256099942544/1033173712";
-        rewardedAd_ID = "ca-app-pub-3940256099942544/5224354917";
+    //private string interstitial_ad_ýd;
+    //private string rewardedad_ýd;
 
-        MobileAds.Initialize(initStatus => { });
+    //void start()
+    //{
+    //    interstitial_ad_ýd = "ca-app-pub-3940256099942544/1033173712";
+    //    rewardedad_ýd = "ca-app-pub-3940256099942544/5224354917";
 
-        RequestInterstitial();
-        RequestRewardedVideo();
-    }
-    
-    private void RequestInterstitial()
-    {
-        interstitial_Ad = new InterstitialAd(interstitial_Ad_ID);
-        interstitial_Ad.OnAdLoaded += HandleOnAnLoaded;
-        AdRequest request = new AdRequest.Builder().Build();
-        interstitial_Ad.LoadAd(request);
-    }
+    //    mobileads.ýnitialize(initstatus => { });
 
-    private void RequestRewardedVideo()
-    {
-        rewardedAd = new RewardedAd(rewardedAd_ID);
-        rewardedAd.OnUserEarnedReward += HandleUserEarnedReward;
-        rewardedAd.OnAdClosed += HandleRewardedAdClosed;
-        rewardedAd.OnAdFailedToShow += HandleRewardedAdFailedToShow;
-        AdRequest request = new AdRequest.Builder().Build();
-        rewardedAd.LoadAd(request);
-    }
+    //    requestýnterstitial();
+    //    requestrewardedvideo();
+    //}
 
-    public void ShowInterstitial()
-    {
-        if (interstitial_Ad.IsLoaded())
-        {
-            interstitial_Ad.Show();
-            RequestInterstitial();
+    //private void requestýnterstitial()
+    //{
+    //    interstitial_ad = new ýnterstitialad(interstitial_ad_ýd);
+    //    interstitial_ad.onadloaded += handleonanloaded;
+    //    adrequest request = new adrequest.builder().build();
+    //    interstitial_ad.loadad(request);
+    //}
 
-        }
-    }
+    //private void requestrewardedvideo()
+    //{
+    //    rewardedad = new rewardedad(rewardedad_ýd);
+    //    rewardedad.onuserearnedreward += handleuserearnedreward;
+    //    rewardedad.onadclosed += handlerewardedadclosed;
+    //    rewardedad.onadfailedtoshow += handlerewardedadfailedtoshow;
+    //    adrequest request = new adrequest.builder().build();
+    //    rewardedad.loadad(request);
+    //}
 
-    public void ShowRewardedVideo()
-    {
-        if (rewardedAd.IsLoaded())
-        {
-            rewardedAd.Show();
-            if (endgame == false)
-            {
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-                Puan = PlayerPrefs.GetInt("Puan");
-                Coin = PlayerPrefs.GetInt("catchtheball");
-                Puan += Coin;
-                PlayerPrefs.DeleteKey("catchtheball");
-                PlayerPrefs.SetInt("Puan", Puan);
-            }
-            else
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
-            
-        }
-    }
+    //public void showýnterstitial()
+    //{
+    //    if (interstitial_ad.ýsloaded())
+    //    {
+    //        interstitial_ad.show();
+    //        requestýnterstitial();
 
-    public void HandleOnAnLoaded(object sender, EventArgs args)
-    {
+    //    }
+    //}
 
-    }
-    public void HandleRewardedAdFailedToShow(object sender, EventArgs args)
-    {
-        RequestRewardedVideo();
-    }
+    //public void showrewardedvideo()
+    //{
+    //    if (rewardedad.ýsloaded())
+    //    {
+    //        rewardedad.show();
+    //        if (endgame == false)
+    //        {
+    //            //scenemanager.loadscene(scenemanager.getactivescene().buildýndex + 1);
+    //            puan = playerprefs.getýnt("puan");
+    //            coin = playerprefs.getýnt("catchtheball");
+    //            puan += coin;
+    //            playerprefs.deletekey("catchtheball");
+    //            playerprefs.setýnt("puan", puan);
+    //        }
+    //        else
+    //        {
+    //            scenemanager.loadscene(scenemanager.getactivescene().buildýndex);
+    //        }
 
-    public void HandleRewardedAdClosed(object sender, EventArgs args)
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+    //    }
+    //}
 
-    public void HandleUserEarnedReward(object sender, EventArgs args)
-    {
-        RequestRewardedVideo();
-    }
+    //public void handleonanloaded(object sender, eventargs args)
+    //{
+
+    //}
+    //public void handlerewardedadfailedtoshow(object sender, eventargs args)
+    //{
+    //    requestrewardedvideo();
+    //}
+
+    //public void handlerewardedadclosed(object sender, eventargs args)
+    //{
+    //    scenemanager.loadscene(scenemanager.getactivescene().buildýndex + 1);
+    //}
+
+    //public void handleuserearnedreward(object sender, eventargs args)
+    //{
+    //    requestrewardedvideo();
+    //}
 
 
 

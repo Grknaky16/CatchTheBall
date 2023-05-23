@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using GoogleMobileAds.Api;
 using GoogleMobileAds.Common;
-using UnityEngine.Advertisements;
+//using UnityEngine.Advertisements;
 
 
 public class GameManager : MonoBehaviour
@@ -60,15 +60,15 @@ public class GameManager : MonoBehaviour
     public void RestartGame(){
         //RewardedAdsButton.Instance.endgame = true;
         //RewardedAdsButton.Instance.ShowAd();
-        AdScript.Instance.endgame = true;
-        AdScript.Instance.ShowRewardedVideo();
+        //AdScript.Instance.endgame = true;
+        //AdScript.Instance.ShowRewardedVideo();
     }
     public void NextLevel2x()
     {
         //RewardedAdsButton.Instance.endgame = false;
         //RewardedAdsButton.Instance.ShowAd();
-        AdScript.Instance.endgame = false;
-        AdScript.Instance.ShowRewardedVideo();
+        //AdScript.Instance.endgame = false;
+        //AdScript.Instance.ShowRewardedVideo();
         
     }
 }
