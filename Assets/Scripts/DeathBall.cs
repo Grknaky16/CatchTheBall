@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DeathBall : MonoBehaviour
 {
-    public ParticleSystem particleSystem;
+    public new ParticleSystem particleSystem;
+    
 
     private void OnTriggerEnter2D(Collider2D collision){
         if(collision.tag == "DeathArea"){
