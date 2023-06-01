@@ -58,17 +58,15 @@ public class GameManager : MonoBehaviour
     } 
     
     public void RestartGame(){
-        //RewardedAdsButton.Instance.endgame = true;
-        //RewardedAdsButton.Instance.ShowAd();
+
         //AdScript.Instance.endgame = true;
-        //AdScript.Instance.ShowRewardedVideo();
+        RestartAdScript.Instance.ShowRewardedAd();
     }
     public void NextLevel2x()
     {
-        //RewardedAdsButton.Instance.endgame = false;
-        //RewardedAdsButton.Instance.ShowAd();
+
         //AdScript.Instance.endgame = false;
-        //AdScript.Instance.ShowRewardedVideo();
+        AdScript.Instance.ShowRewardedAd();
         
     }
 }
